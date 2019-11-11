@@ -1,6 +1,14 @@
-from flask import Flask
-import config
+from flask import Flask, render_template
+from flask_script import Manager
+from flask_moment import Moment
 
+
+
+from datetime import datetime
+
+
+#addition
+import config
 
 
 app = Flask(__name__)
@@ -12,6 +20,20 @@ app = Flask(__name__)
 def index():
     return "<h1> Hello World from FUT Minna"
     pass
+
+
+
+
+@app.errorhandler(500)
+def internal_server_error(e):
+	return render_template('500.html', current_time=datetime.utcnow()), 500
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+	return render_template('404.html', current_time=datetime.utcnow()), 404
+
+
 
 
 
