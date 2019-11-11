@@ -1,5 +1,5 @@
 #Dockerfile
-FROM imosudi/ubuntu-rootfs-osbuilder:v3
+FROM imosudi/ubuntu-rootfs-osbuilder:10
 RUN apt update
 WORKDIR /app
 ADD requirements.txt /app/requirements.txt
