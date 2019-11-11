@@ -25,7 +25,7 @@ moment = Moment(app)
 @app.route('/', methods = ['GET', 'POST'])
 def index():
     #return "<h1> Hello World from FUT Minna"
-    return render_template('base.html', 
+    return render_template('index_1.html', 
 		current_time=datetime.utcnow())#
     pass
 
