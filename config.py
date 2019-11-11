@@ -2,7 +2,7 @@
 from os import environ as env
 #import multiprocessing
 
-PORT = int(env.get("PORT", 9081))
+PORT = int(env.get("PORT", 9082))
 DEBUG_MODE = int(env.get("DEBUG_MODE", 1))
 
 #Gunicorn config
