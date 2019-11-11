@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Web App{% endblock %}
+{% block page_content %}
+<!--div class="container">
+	{% for message in get_flashed_messages() %}
+	<div class="alert alert-warning" >
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		{{ message }}		
+	</div>
+	{% endfor %}
+</div-->
+<div class="page-header">
+<h2>Know Your Rubik' Cubes</h2>
+</div>
+
+<div class="panel panel-info col-md-10 col-md-offset-1">
+  <div class="panel-heading">
+    <h3 class="panel-title">Rubik's Cubes</h3>
+  </div>
+  <div class="panel-body">
+  <div class="row">
+	  <div class="col-md-4"> 
+	  	<div class="thumbnail hovereffect">
+	  	{{ wtf.quick_form(form) }} 
+
+	  	 {% for message in get_flashed_messages() %} 
+	  	 		<p class="text-danger"> {{ message }} </p> 
+	  	 {% endfor %}
+	  	 
+	  	 </div>
+	  </div>
+  
+	  <div class="col-md-8" style="text-align: center; font-weight: bold;">
+	  		<div class="row"> 			
+	  		
+	  			<div class="col-md-3 list-group alert alert-success">
+	  				<div class="list-group-item active" style="font-size: 11px">Rubik Size</div>
+		      		<div class="list-group-item">{% if num > 1 %} {{ num }}X{{ num }}X{{ num }} {% endif %}</div> 
+		      	</div>
+	  			<div class="col-md-3 list-group alert alert-info">
+	  				<div class="list-group-item active" style="font-size: 11px">Total Cubelets</div>
+		      		<div class="list-group-item">{% if num > 1 %} {{ cubeletSum }} {% endif %}</div> 
+		      	</div>
+		    	<div class="col-md-3 list-group alert alert-success">
+		    		<div class="list-group-item active" style="font-size: 11px">Faces Cubelets</div>
+		    		<div class="list-group-item">{% if num > 1 %} {{ FacesCubelets }} {% endif %}</div>
+		    	</div>
+		    	<div class="col-md-3 list-group alert alert-info">
+		    		<div class="list-group-item active" style="font-size: 11px">Hidden Cubelets</div>
+		    		<div class="list-group-item">{% if num > 1 %}{{ hidden }} {% endif %}</div>
+		    	</div>
+	    	
+	    	</div>
+	    </div>
+	</div><!--end row-->
+
+{% if m >= 2 and m < 13 %} 
+  
+    {{ wtf.quick_form(formM) }} 
+
+    {{ formM.m.data }}
+
+ {% endif %}
+
+	{% include "rubiks_images.html" ignore missing %}
+	<br>
+	<p>
+	<div class="row">
+	<div class="col-md-2 " style="background-color: blue; "> F = FRONT</div>
+	<div class="col-md-2 " style="background-color: green;"> B = BACK </div>
+	<div class="col-md-2 " style="background-color: brown; "> L = LEFT</div>
+	<div class="col-md-2 " style="background-color: orange ; "> R = RIGHT </div>		
+	<div class="col-md-2 " style="font-weight: bold;"> U = UP</div>
+	<div class="col-md-2 " style="background-color: yellow;"> D = DOWN</div>
+	</div>
+	</p>
+
+
+<!--I Pass value of m from jinja template as javascript variable
+OR look for a way to process it btw Python and Jinja2,  31st 6:35am -->
+<!-- 
+  <script type="text/javascript">
+  $(function(){        
+    $('#new_entry_submit_button').bind('click', function(e) {  
+  	function fillValuesInTextBoxes(){
+  		var m = {{ m }};
+    document.getElementById("n").value = m;
+	return true
+    };
+});
+  </script> -->
+ 
+
+<!--
+<script>
+function getM(){        
+    ('#new_entry_submit_button').bind('click', function(e) {  
+	function DoSubmit(){
+		var m = {{ m }};
+  document.getElementById("n").value = m;
+  return true;
+}
+});
+};
+</script>
+-->
+
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+

@@ -1,0 +1,67 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Rubiks{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<!--link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}"-->
+<link rel="apple-touch-icon" href="{{ url_for('static', filename='favico/apple-icon-57x57.png') }}">
+<link rel="apple-touch-icon"  href="{{ url_for('static', filename='favico/apple-icon-60x60.png') }}">
+<link rel="apple-touch-icon"  href="{{ url_for('static', filename='favico/apple-icon-72x72.png') }}">
+<link rel="apple-touch-icon" href="{{ url_for('static', filename='favico/apple-icon-76x76.png') }}">
+<link rel="apple-touch-icon"  href="{{ url_for('static', filename='favico/apple-icon-114x114.png') }}">
+<link rel="apple-touch-icon"  href="{{ url_for('static', filename='favico/apple-icon-120x120.png') }}">
+<link rel="apple-touch-icon"  href="{{ url_for('static', filename='favico/apple-icon-144x144.png') }}">
+<link rel="apple-touch-icon"  href="{{ url_for('static', filename='favico/apple-icon-152x152.png') }}">
+<link rel="apple-touch-icon"  href="{{ url_for('static', filename='favico/apple-icon-180x180.png') }}">
+<link rel="icon" type="image/png"  href="{{ url_for('static', filename='favico/android-icon-192x192.png') }}">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='favico/favicon-32x32.png') }}">
+<link rel="icon" type="image/png"  href="{{ url_for('static', filename='favico/favicon-96x96.png') }}">
+<link rel="icon" type="image/png"  href="{{ url_for('static', filename='favico/favicon-16x16.png') }}">
+<link rel="manifest" href="{{ url_for('static', filename='favico/manifest.json') }}">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="{{ url_for('static', filename='favico/ms-icon-144x144.png') }}">
+<meta name="theme-color" content="#ffffff">
+{{ moment.include_moment() }}
+{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">Rubik Cube</a>
+		</div>
+	<div class="navbar-collapse collapse">
+		<ul class="nav navbar-nav">
+			<li><a href="/">Home</a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> Help  <span class="caret"></span></a>
+            <ul class="dropdown-menu  list-group">
+                <li class="list-group-item text-info"><a href="#">This application provide detail of Rubik’s Cube.</a></li>
+                <li class="list-group-item"><a class="text-info">The total number of cublets making up an nXnXn Rubik’s cube.</a></a></li>
+                <li class="list-group-item"><a  class="text-info">It also provides the total number of cublets making tu the faces of Rubiks’s cube.</a></li>
+                <li  class="list-group-item"><a class="text-info"> The faces are Up, Down, Front, Back, Right and Left.</a></li>
+                <li  class="list-group-item"><a class="text-info">It provides the total number of hidden cublets of any given Rubik’s cube.</a></li>
+                <li  class="list-group-item"><a class="text-info">It can also create smaller Rubik’s cube if possible by removing the faces.</a></li>
+                <li  class="list-group-item"><a class="text-info">The application is, currently, allowed to process nXnXn Rubik's Cube (1 < n < 15).</a></li>
+                <li  class="list-group-item"><a class="text-info"> Made with  Python 2.7 and Flask framework .</a></li>
+             </ul>
+
+            </li>
+        </ul>
+	</div>
+	</div>
+</div>
+{% endblock %}
+{% block content %}
+	<div class="container">
+		{% block page_content %}{% endblock %}
+	</div>
+	<footer class="text-info" style="text-align: center;"> &copy; copyright  {{ moment(current_time).format('YYYY') }} | <a href="mailto:imosudi@gmail.com">imosudi@gmail.com</a> | <a href="http://www.mioemi.com">wwww.mioemi.com</a> </footer>
+{% endblock %}
