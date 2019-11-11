@@ -9,7 +9,7 @@ from datetime import datetime
 
 #addition
 import config
-import routes
+#import routes
 
 app = Flask(__name__)
 
@@ -25,12 +25,21 @@ moment = Moment(app)
 @app.route('/', methods = ['GET', 'POST'])
 def index():
     #return "<h1> Hello World from FUT Minna"
-    return render_template('index.html', 
+    return render_template('base.html', 
 		current_time=datetime.utcnow())#
     pass
 
 
 
+
+@app.errorhandler(500)
+def internal_server_error(e):
+	return render_template('500.html', current_time=datetime.utcnow()), 500
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+	return render_template('404.html', current_time=datetime.utcnow()), 404
 
 
 
