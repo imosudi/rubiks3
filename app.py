@@ -9,6 +9,7 @@ from datetime import datetime
 
 #addition
 import config
+import forms
 #import routes
 
 app = Flask(__name__)
@@ -25,7 +26,9 @@ moment = Moment(app)
 @app.route('/', methods = ['GET', 'POST'])
 def index():
     #return "<h1> Hello World from FUT Minna"
-    return render_template('index_1.html', 
+    form = rubikForm()
+	formM = rubikFormM()
+    return render_template('index.html', 
 		current_time=datetime.utcnow())#
     pass
 
