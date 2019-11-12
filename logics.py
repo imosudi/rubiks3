@@ -1,5 +1,6 @@
-from flask import session, flash
-from forms import rubikForm, rubikFormM
+from flask import session
+import forms
+#from forms import rubikForm, rubikFormM
 
 class rubikOperation(object):
 	"""docstring for rubikOperation"""
@@ -8,8 +9,8 @@ class rubikOperation(object):
 					self.arg = arg'''
 	#n = int(input('Give N for nXnXn Rubik\'s cube: '))
 	def inputNbyNbyN(self):
-		form = rubikForm()
-		formM = rubikFormM()
+		form = forms.rubikForm()
+		formM = forms.rubikFormM()
 		m = session.get('m')
 		#m = formM.m.data
 		formM.m.data = ''
@@ -25,14 +26,6 @@ class rubikOperation(object):
 		#n = int(n)
 		#n = abs(n)
 		#return n
-		"""if n > 1 and n < 15:
-									return n
-								elif n > 1:
-									flash ('This application will not process that work load. Kindly Provide n more than 1 for nXnXn Rubik\'s Cube ')
-									return 3
-								else:
-									flash ('Provide n more than 1 for nXnXn Rubik\'s Cube ')
-									return 3"""
 		pass
 
 	def numCubelets(self):
