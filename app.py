@@ -7,9 +7,10 @@ from flask_bootstrap import Bootstrap
 from datetime import datetime
 
 
-#addition
+# Custom llbrary addition
 import config
-from forms import rubikForm, rubikFormM
+import logics
+import forms
 #import routes
 
 app = Flask(__name__)
@@ -26,14 +27,14 @@ moment = Moment(app)
 @app.route('/', methods = ['GET', 'POST'])
 def index():
     #return "<h1> Hello World from FUT Minna"
-    form = rubikForm()
-    formM = rubikFormM()
-    #formM = rubikFormM()
-    return render_template('index.html', 
-		form=form, formM=formM, current_time=datetime.utcnow())
+    form = forms.rubikForm()
+    formM = forms.rubikFormM()
+    rubikOp = logics.rubikOperation()
+    num = rubikOp.inputNbyNbyN()
+    print(num)
+    return render_template('index.html',
+    form=form, formM=formM, num=num, current_time=datetime.utcnow())
     pass
-
-
 
 
 @app.errorhandler(500)
@@ -45,13 +46,8 @@ def internal_server_error(e):
 def page_not_found(e):
 	return render_template('404.html', current_time=datetime.utcnow()), 404
 
-
-
-
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=config.PORT, debug=config.DEBUG_MODE)
-
-
 
 
 """if __name__ == "__main__":
