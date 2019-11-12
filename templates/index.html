@@ -35,16 +35,20 @@
 	  		<div class="row"> 			
 	  		
 	  			<div class="col-md-3 list-group alert alert-success">
-	  				<div class="list-group-item active" style="font-size: 11px">Rubik Size</div>
+					  <div class="list-group-item active" style="font-size: 11px">Rubik Size</div>
+					  <div class="list-group-item">{% if num > 1 %} {{ num }}X{{ num }}X{{ num }} {% endif %}</div> 
 		      	</div>
 	  			<div class="col-md-3 list-group alert alert-info">
-	  				<div class="list-group-item active" style="font-size: 11px">Total Cubelets</div>
+					  <div class="list-group-item active" style="font-size: 11px">Total Cubelets</div>
+					  <div class="list-group-item">{% if num > 1 %} {{ cubeletSum }} {% endif %}</div>
 		      	</div>
 		    	<div class="col-md-3 list-group alert alert-success">
-		    		<div class="list-group-item active" style="font-size: 11px">Faces Cubelets</div>
+					<div class="list-group-item active" style="font-size: 11px">Faces Cubelets</div>
+					<div class="list-group-item">{% if num > 1 %} {{ FacesCubelets }} {% endif %}</div>
 		    	</div>
 		    	<div class="col-md-3 list-group alert alert-info">
-		    		<div class="list-group-item active" style="font-size: 11px">Hidden Cubelets</div>
+					<div class="list-group-item active" style="font-size: 11px">Hidden Cubelets</div>
+					<div class="list-group-item">{% if num > 1 %}{{ hidden }} {% endif %}</div>
 		    	</div>
 	    	
 	    	</div>
