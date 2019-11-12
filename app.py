@@ -39,6 +39,7 @@ def index():
         FacesCubelets = 26
         hidden = 1
         m = 1
+        formM.m.data = m
 
     elif num > 1 and num < 15:
         cubeletSum = rubikOp.numCubelets()
@@ -46,6 +47,16 @@ def index():
         hidden = rubikOp.hiddenCubelets()
         m = rubikOp.nM()
         formM.m.data  = m
+    
+    elif num < 2:
+        flash ('Provide n (1<n<14) ')
+        num = 3
+        cubeletSum = 27
+        FacesCubelets = 26
+        hidden = 1
+        m = 1
+        formM.m.data = m 
+    
     elif num > 14:
         flash ('Provide n (1<n<14) TOO MUCH')
         num = 3
