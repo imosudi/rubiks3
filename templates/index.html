@@ -21,7 +21,15 @@
   <div class="panel-body">
   <div class="row">
 	  <div class="col-md-4"> 
-	  	<div class="thumbnail hovereffect">
+	  	<div class="thumbnail hovereffect"><!-- 
+			{##% if m >= 2 and m < 13 %} 
+			  
+				{{ wtf.quick_form(formM) }} 
+			
+				{{ formM.m.data }}
+			
+			 {% endif %##}
+			-->
 				{{ wtf.quick_form(form) }} 
 
 				{% for message in get_flashed_messages() %} 
@@ -84,3 +92,12 @@
 {% endblock %}
 
 
+<!-- 
+{##% if m >= 2 and m < 13 %} 
+  
+    {{ wtf.quick_form(formM) }} 
+
+    {{ formM.m.data }}
+
+ {% endif %##}
+-->

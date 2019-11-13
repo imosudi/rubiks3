@@ -18,7 +18,7 @@ import logics
 import forms
 
 #import cube2
-import cube2 
+from cube2 import Cube
 
 app = Flask(__name__)
 
@@ -74,7 +74,7 @@ def index():
 
     img = io.BytesIO()
     np.random.seed(42)
-    fig = Cube.cube2(num, whiteplastic=True)
+    fig = Cube(num, whiteplastic=True)
     fig.render(flat=False).savefig(img, format='png',  dpi=965 )
 
     img.seek(0)
