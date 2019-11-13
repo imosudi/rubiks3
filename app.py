@@ -91,7 +91,7 @@ def index():
     fig.render(flat=False).savefig(img, format='png',  dpi=965 )
 
     img.seek(0)
-    plot_url = base64.b64encode(img.getvalue())
+    plot_url = base64.b64encode(img.getvalue()).decode()
 
     return render_template('index.html', plot_url=plot_url,
     FacesCubelets=FacesCubelets, hidden=hidden, m=m, cubeletSum=cubeletSum, 
@@ -111,7 +111,7 @@ def page_not_found(e):
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=config.PORT, debug=config.DEBUG_MODE)
 
-
+""" https://stackoverflow.com/questions/26088946/string-bytes-issue-when-upgrading-from-python2-to-python3"""
 """if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
     #manager.run()"""
