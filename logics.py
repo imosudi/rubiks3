@@ -1,12 +1,7 @@
 from flask import session
 import forms
-#from forms import rubikForm, rubikFormM
 
 class rubikOperation(object):
-	"""docstring for rubikOperation"""
-	'''def __init__(self, arg):
-					super(rubikOperation, self).__init__()
-					self.arg = arg'''
 	#n = int(input('Give N for nXnXn Rubik\'s cube: '))
 	def inputNbyNbyN(self):
 		form = forms.rubikForm()

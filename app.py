@@ -8,17 +8,8 @@ from flask_bootstrap import Bootstrap
 from datetime import datetime
 
 import numpy as np
-import pandas as pd
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
-from matplotlib.patches import Rectangle
-from matplotlib.patches import Polygon
 
 import io
-#import StringIO
-from io import StringIO
-from io import BytesIO
 import base64
 
 # Custom llbrary addition
@@ -27,9 +18,7 @@ import logics
 import forms
 
 #import cube2
-from cube2 import Cube
-
-#import routes
+import cube2 
 
 app = Flask(__name__)
 
@@ -44,7 +33,6 @@ moment = Moment(app)
 
 @app.route('/', methods = ['GET', 'POST'])
 def index():
-    #return "<h1> Hello World from FUT Minna"
     form = forms.rubikForm()
     formM = forms.rubikFormM()
     rubikOp = logics.rubikOperation()
@@ -84,10 +72,9 @@ def index():
         m = 1 
         formM.m.data  = m
 
-    #img = StringIO()
     img = io.BytesIO()
     np.random.seed(42)
-    fig = Cube(num, whiteplastic=True)
+    fig = Cube.cube2(num, whiteplastic=True)
     fig.render(flat=False).savefig(img, format='png',  dpi=965 )
 
     img.seek(0)
