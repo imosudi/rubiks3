@@ -1,27 +1,30 @@
 from flask import session
-import forms
+#import forms
+from forms import rubikForm, rubikFormM
 
 class rubikOperation(object):
 	#n = int(input('Give N for nXnXn Rubik\'s cube: '))
 	def inputNbyNbyN(self):
-		form = forms.rubikForm()
-		formM = forms.rubikFormM()
-		m = session.get('m')
+		#form = forms.rubikForm()
+                form = rubikForm()
+		#formM = forms.rubikFormM()
+                formM = rubikFormM()
+                m = session.get('m')
 		#m = formM.m.data
-		formM.m.data = ''
-		n = session.get('n')
-		n = form.n.data
-		if m == None:
-			m = 0
-			n = n
-			return n
-		else:
-			n = m
-			return n
-		#n = int(n)
-		#n = abs(n)
-		#return n
-		pass
+                formM.m.data = ''
+                n = session.get('n')
+                n = form.n.data
+                if m == None:
+                    m = 0
+                    n = n
+                    return n
+                else:
+                    n = m
+                    return n
+                #n = int(n)
+                #n = abs(n)
+                #return n
+                pass
 
 	def numCubelets(self):
 		n = self.inputNbyNbyN()

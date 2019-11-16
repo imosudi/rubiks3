@@ -13,10 +13,10 @@
 <div class="page-header">
 <h2>Know Your Rubik' Cubes</h2>
 </div>
-{{  timer }}
+<!-- {{  timer }}
 
 <br>
-{{ time.time() - timer }}
+{{ time.time() - timer }} -->
 
 <div class="panel panel-info col-md-10 col-md-offset-1">
   <div class="panel-heading">
@@ -78,14 +78,19 @@
 	<br>
 	<p>
 	<div class="row">
-	<div class="col-md-2 " style="background-color: blue; "> F = FRONT</div>
-	<div class="col-md-2 " style="background-color: green;"> B = BACK </div>
-	<div class="col-md-2 " style="background-color: brown; "> L = LEFT</div>
-	<div class="col-md-2 " style="background-color: orange ; "> R = RIGHT </div>		
-	<div class="col-md-2 " style="font-weight: bold;"> U = UP</div>
-	<div class="col-md-2 " style="background-color: yellow;"> D = DOWN</div>
+		<div class="col-md-2 " style="background-color: blue; "> F = FRONT</div>
+		<div class="col-md-2 " style="background-color: green;"> B = BACK </div>
+		<div class="col-md-2 " style="background-color: brown; "> L = LEFT</div>
+		<div class="col-md-2 " style="background-color: orange ; "> R = RIGHT </div>		
+		<div class="col-md-2 " style="font-weight: bold;"> U = UP</div>
+		<div class="col-md-2 " style="background-color: yellow;"> D = DOWN</div>
 	</div>
-	<h1> {{ delay + (time.time() - timer) }}
+	<h1>
+		<em> 
+			{{ delay + (time.time() - timer) }}
+		</em>
+
+	</h1>
 	</p>
 
 
