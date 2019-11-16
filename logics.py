@@ -25,7 +25,7 @@ class rubikOperation(object):
 
 	def numCubelets(self):
 		n = self.inputNbyNbyN()
-		if n < 3 or n > 15:
+		if n < 3 or n > 25:
 			return 3**3
 		else:
 			return n**3

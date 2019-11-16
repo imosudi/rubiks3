@@ -1,6 +1,6 @@
 #Dockerfile
-#FROM imosudi/ubuntu-rootfs-osbuilder:11
-FROM imosudi/ubuntu-rootfs-osbuilder:v13
+FROM imosudi/ubuntu-rootfs-osbuilder:11
+#FROM imosudi/ubuntu-rootfs-osbuilder:v13
 #with python3-tk
 RUN apt update
 WORKDIR /app

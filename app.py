@@ -6,6 +6,9 @@ from flask_bootstrap import Bootstrap
 
 
 from datetime import datetime
+import timeit
+import time
+
 
 import numpy as np
 
@@ -33,6 +36,8 @@ moment = Moment(app)
 
 @app.route('/', methods = ['GET', 'POST'])
 def index():
+    #start = timeit.timeit()
+    start = time.time()
     form = forms.rubikForm()
     formM = forms.rubikFormM()
     rubikOp = logics.rubikOperation()
@@ -47,7 +52,7 @@ def index():
         m = 1
         formM.m.data = m
 
-    elif num > 1 and num < 15:
+    elif num > 1 and num < 25:
         cubeletSum = rubikOp.numCubelets()
         FacesCubelets = rubikOp.numFacesCubelets()
         hidden = rubikOp.hiddenCubelets()
@@ -63,7 +68,7 @@ def index():
         m = 1
         formM.m.data = m 
     
-    elif num > 14:
+    elif num > 24:
         flash ('Provide n (1<n<14) TOO MUCH')
         num = 3
         cubeletSum = 27 
@@ -80,7 +85,13 @@ def index():
     img.seek(0)
     plot_url = base64.b64encode(img.getvalue()).decode()
 
-    return render_template('index.html', plot_url=plot_url,
+    #delay = timeit.timeit()
+    end = time.time()
+    delay = end - start
+
+    timer=time.time()
+
+    return render_template('index.html', plot_url=plot_url, delay=delay, time=time, timer=timer, 
     FacesCubelets=FacesCubelets, hidden=hidden, m=m, cubeletSum=cubeletSum, 
     form=form, formM=formM, num=num, current_time=datetime.utcnow())
     pass
