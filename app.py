@@ -45,9 +45,9 @@ moment = Moment(app)
 def index():
     #start = timeit.timeit()
     #print('plot_url size before None', getsizeof(plot_url))
-    plot_url = None
-    fig = None
-    img = None
+    #plot_url = None
+    #fig = None
+    #img = None
     #print('plot_url size after None', getsizeof(plot_url))
     #print('for num at load or reload the fig size is ', getsizeof(fig), 'img size', getsizeof(img), 'plot_url size', getsizeof(plot_url))
     start = time.time()
@@ -91,7 +91,7 @@ def index():
         formM.m.data  = m
 
     img = io.BytesIO()
-    np.random.seed(42)
+    #np.random.seed(42)
     fig = Cube(num, whiteplastic=True)
     fig.render(flat=False,  views=True).savefig(img, format='png',  dpi=965 )
 
@@ -105,10 +105,8 @@ def index():
     fig = None
     #img = io.BytesIO()
     #img = None
-    plt.clf()
+    #plt.clf()
     plt.close()
-    #print('plot_url size', getsizeof(plot_url))
-    #print('for', num, 'the fig size is ', getsizeof(fig), 'img size', getsizeof(img), 'plot_url size', getsizeof(plot_url))
 
     #delay = timeit.timeit()
     end = time.time()
