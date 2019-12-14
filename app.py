@@ -114,8 +114,6 @@ def index():
 
     timer=time.time()
 
-    #Debugging
-    #print(num)
 
     #print(img)
     #print('img type is', type(img))
