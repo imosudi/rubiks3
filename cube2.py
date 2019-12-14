@@ -220,6 +220,7 @@ class Cube(object):
             xlim = (-1.2, 3.2)
             ylim = (-1.2, 2.2)
         fig = plt.figure(figsize=((xlim[1] - xlim[0]) * self.N / 5., (ylim[1] - ylim[0]) * self.N / 5.))
+        plt.clf()
         ax = fig.add_axes((0, 0, 1, 1), frameon=False,
                           xticks=[], yticks=[])
         if views:
@@ -228,6 +229,7 @@ class Cube(object):
             self.render_flat(ax)
         ax.set_xlim(xlim)
         ax.set_ylim(ylim)
+        plt.close()
         return fig
 
 #I will attemp these in my app.py
@@ -246,6 +248,6 @@ class Cube(object):
     c.render(flat=True).savefig("%dX%dX%d_Rubik's_Cubes.png" %(n, n, n), dpi=565 / c.N)
     #return cubeName
     #print cubeName
-    #cubeName.seek(0)
+    #cubeName.seek0)
 
 '''

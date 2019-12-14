@@ -11,6 +11,13 @@ import time
 
 
 import numpy as np
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+
+
+from sys import getsizeof
+
 
 import io
 import base64
@@ -37,6 +44,12 @@ moment = Moment(app)
 @app.route('/', methods = ['GET', 'POST'])
 def index():
     #start = timeit.timeit()
+    #print('plot_url size before None', getsizeof(plot_url))
+    plot_url = None
+    fig = None
+    img = None
+    #print('plot_url size after None', getsizeof(plot_url))
+    #print('for num at load or reload the fig size is ', getsizeof(fig), 'img size', getsizeof(img), 'plot_url size', getsizeof(plot_url))
     start = time.time()
     form = forms.rubikForm()
     formM = forms.rubikFormM()
@@ -80,10 +93,22 @@ def index():
     img = io.BytesIO()
     np.random.seed(42)
     fig = Cube(num, whiteplastic=True)
-    fig.render(flat=False).savefig(img, format='png',  dpi=965 )
+    fig.render(flat=False,  views=True).savefig(img, format='png',  dpi=965 )
 
+    #matplotlib.pyplot.close(fig)
+
+
+    #print('for', num, 'the fig size is ', getsizeof(fig), 'img size', getsizeof(img), 'plot_url size', getsizeof(plot_url))
     img.seek(0)
+    #print('img size', getsizeof(img))
     plot_url = base64.b64encode(img.getvalue()).decode()
+    fig = None
+    img = io.BytesIO()
+    img = None
+    plt.clf()
+    plt.close()
+    #print('plot_url size', getsizeof(plot_url))
+    #print('for', num, 'the fig size is ', getsizeof(fig), 'img size', getsizeof(img), 'plot_url size', getsizeof(plot_url))
 
     #delay = timeit.timeit()
     end = time.time()
@@ -91,9 +116,48 @@ def index():
 
     timer=time.time()
 
+    #Debugging
+    #print(num)
+
+    #print(img)
+    #print('img type is', type(img))
+
+    #print('fig type is', type(fig))
+    #plot_url = 0
+    #print('for', num, 'the fig size is ', getsizeof(fig), 'img size', getsizeof(img), 'plot_url size', getsizeof(plot_url))
+
+    """if form.validate() :
+        return render_template('index.html', plot_url=plot_url, delay=delay, time=time, timer=timer,
+                FacesCubelets=FacesCubelets, hidden=hidden, m=m, cubeletSum=cubeletSum,
+                form=form, formM=formM, num=num, current_time=datetime.utcnow())
+        img = io.BytesIO()
+        plot_url = None
+    else:
+        return render_template('index.html', plot_url=plot_url, delay=delay, time=time, timer=timer,
+                FacesCubelets=FacesCubelets, hidden=hidden, m=m, cubeletSum=cubeletSum,
+                form=form, formM=formM, num=3, current_time=datetime.utcnow())"""
+
     return render_template('index.html', plot_url=plot_url, delay=delay, time=time, timer=timer, 
     FacesCubelets=FacesCubelets, hidden=hidden, m=m, cubeletSum=cubeletSum, 
     form=form, formM=formM, num=num, current_time=datetime.utcnow())
+
+    """print(img)
+    print(fig)
+    
+    print(type(img))
+    print(type(fig))"""
+
+    #fig.clear()
+    img = io.BytesIO()
+
+    #print(img)
+    #print(fig)
+
+    """else:
+        return render_template('index.html', plot_url=plot_url, delay=delay, time=time, timer=timer,
+                FacesCubelets=FacesCubelets, hidden=hidden, m=m, cubeletSum=cubeletSum,
+                form=form, formM=formM, num=3, current_time=datetime.utcnow())"""
+
     pass
 
 
