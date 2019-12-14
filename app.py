@@ -103,8 +103,8 @@ def index():
     #print('img size', getsizeof(img))
     plot_url = base64.b64encode(img.getvalue()).decode()
     fig = None
-    img = io.BytesIO()
-    img = None
+    #img = io.BytesIO()
+    #img = None
     plt.clf()
     plt.close()
     #print('plot_url size', getsizeof(plot_url))
@@ -148,7 +148,7 @@ def index():
     print(type(fig))"""
 
     #fig.clear()
-    img = io.BytesIO()
+    #img = io.BytesIO()
 
     #print(img)
     #print(fig)
