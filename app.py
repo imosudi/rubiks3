@@ -49,7 +49,8 @@ moment = Moment(app)
 current_time=datetime.now()
 logfilename = str(current_time) + '.log'
 logfile = os.path.join('log_dir/', logfilename)
-logging.basicConfig(filename=logfile, level=logging.INFO)
+logging.basicConfig(filename=logfile, level=logging.INFO, 
+        format='%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 
 #logging.basicConfig(filename=logfile, level=logging.DEBUG)
 
