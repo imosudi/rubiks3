@@ -5,4 +5,4 @@ venv/
 *.py.swp
 *.swp
 __pycache__
-
+*_backup
