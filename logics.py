@@ -21,8 +21,6 @@ class rubikOperation(object):
                 else:
                     n = m
                     return n
-                #n = int(n)
-                #n = abs(n)
                 #return n
                 pass
 

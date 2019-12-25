@@ -7,7 +7,7 @@ MAINTAINER mosudi.pg7331@st.futminna.edu.ng
 RUN apt update
 
 # Apache2
-RUN apt-get install -y apache2
+#RUN apt-get install -y apache2
 
 WORKDIR /app
 ADD requirements.txt /app/requirements.txt
