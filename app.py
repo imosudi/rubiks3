@@ -16,7 +16,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 
-from sys import getsizeof
+#from sys import getsizeof
 
 
 import io
@@ -30,6 +30,11 @@ import forms
 #import cube2
 from cube2 import Cube
 
+#Importing Logging
+import logging
+import os.path
+
+
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'hard to guess string'
@@ -39,6 +44,14 @@ bootstrap = Bootstrap(app)
 manager = Manager(app)
 moment = Moment(app)
 
+
+#Creating log filename
+current_time=datetime.now()
+logfilename = str(current_time) + '.log'
+logfile = os.path.join('log_dir/', logfilename)
+logging.basicConfig(filename=logfile, level=logging.INFO)
+
+#logging.basicConfig(filename=logfile, level=logging.DEBUG)
 
 
 @app.route('/about', methods = ['GET'])

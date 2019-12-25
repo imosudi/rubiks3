@@ -10,9 +10,16 @@ RUN apt update
 #RUN apt-get install -y apache2
 
 WORKDIR /app
+
+
 ADD requirements.txt /app/requirements.txt
 RUN pip3 install -r /app/requirements.txt
 ADD . /app
+
+#Logging
+RUN mkdir -p /app/log_dir
+
+
 ENV PORT 9082
 
 #EXPOSE 80
