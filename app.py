@@ -33,7 +33,8 @@ from cube2 import Cube
 #Importing Logging
 import logging
 import os.path
-
+#from logging_tree import printout  # pip install logging_tree
+#printout()
 
 app = Flask(__name__)
 
@@ -52,11 +53,11 @@ logfilename = logfilename.replace(" ", "_")
 logfilename = logfilename.replace(":", "_")
 logfilename = logfilename.replace(".", "_") + '.log'
 logfile = os.path.join('log_dir/', logfilename)
-logging.basicConfig(filename=logfile, level=logging.INFO, 
+logging.basicConfig(filename=logfile, level=logging.DEBUG, 
         format='%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 
 #logging.basicConfig(filename=logfile, level=logging.DEBUG)
-
+#printout()
 
 @app.route('/about', methods = ['GET'])
 def about():
