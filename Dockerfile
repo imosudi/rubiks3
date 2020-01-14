@@ -1,6 +1,7 @@
 #Dockerfile
 #docker build -t imosudi/rubiks3ubuntufs-kataruntime:v1.4 . && docker run -it -p 9082:9082 -v /home/mosud/Documents/dev3/log_dir:/app/log_dir/ imosudi/rubiks3ubuntufs-kataruntime:v1.4
-FROM imosudi/ubuntu-rootfs-osbuilder-pg7331_kata:v0.9
+#FROM imosudi/ubuntu-rootfs-osbuilder-pg7331_kata:v0.9
+FROM imosudi/ubuntu-rootfs-osbuilder:v10.0
 
 #with python3-tk# File Author / Maintainer
 MAINTAINER mosudi.pg7331@st.futminna.edu.ng
