@@ -5,7 +5,7 @@ from flask_bootstrap import Bootstrap
 
 
 from app import views
-from app import config
+#from app import config
 from app import logics
 from app import forms
 
@@ -25,8 +25,13 @@ app = Flask(__name__)
 
 from app.cube2 import Cube
 
+PORT = int(env.get("PORT", 9082))
+DEBUG_MODE = int(env.get("DEBUG_MODE", 1))
 
-app.config['SECRET_KEY'] = 'hard to guess string'
+#Gunicorn config
+bind = ":" + str(PORT)
+
+app['SECRET_KEY'] = 'hard to guess string'
 
 bootstrap = Bootstrap(app)
 
