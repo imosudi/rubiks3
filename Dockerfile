@@ -8,7 +8,7 @@ RUN apt update
 
 WORKDIR /rubiksapp
 
-COPY requirements.txt 
+COPY requirements.txt  /rubiksapp
 RUN pip3 install -r requirements.txt
 
 ADD . /app
