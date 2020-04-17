@@ -3,7 +3,7 @@ import os
 import sys
 #sys.path.insert(0, "../venv/lib/python3.6/site-packages")
 #Dockerfile COPY --from=builder /app/build "../venv/lib/python3.6/site-packages"
-sys.path.insert(0, "../python3.6/site-packages")
+#sys.path.insert(0, "../python3.6/site-packages")
 
 from os import environ as env
 #Importing Logging
