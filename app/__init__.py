@@ -8,7 +8,7 @@ from app import views
 from app import config
 from app import logics
 from app import forms
-from app import logging
+#from app import logging
 
 from app.cube2 import Cube
 
