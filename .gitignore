@@ -6,3 +6,5 @@ venv/
 *.swp
 __pycache__
 *_backup
+.vscode
+.vscode/
