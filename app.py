@@ -2,9 +2,9 @@ import os
 import sys
 
 from flask import Flask, render_template, flash
-from flask_script import Manager
+"""from flask_script import Manager
 from flask_moment import Moment
-from flask_bootstrap import Bootstrap
+from flask_bootstrap import Bootstrap"""
 
 
 app = Flask(__name__)
@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 
 
-app['SECRET_KEY'] = 'hard to guess string'
+"""app['SECRET_KEY'] = 'hard to guess string'"""
 
 bootstrap = Bootstrap(app)
 
