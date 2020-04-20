@@ -1,0 +1,18 @@
+FROM imosudi/ubuntu-rootfs-osbuilder:v10.0
+
+#with python3-tk# File Author / Maintainer
+MAINTAINER mosudi.pg7331@st.futminna.edu.ng
+
+RUN apt update
+
+
+WORKDIR /rubiksapp
+
+COPY requirements.txt  /rubiksapp
+RUN pip3 install -r requirements.txt
+
+COPY  /app .
+
+ENV PORT 9082
+
+CMD ["/usr/bin/python3", "__init__.py"]
