@@ -15,10 +15,10 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 #from datetime import datetime
-import timeit
+"""import timeit
 import time
 import io
-import base64
+import base64"""
 
 app = Flask(__name__)
 #from app import logging
