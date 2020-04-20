@@ -14,10 +14,10 @@ app = Flask(__name__)
 
 """app['SECRET_KEY'] = 'hard to guess string'"""
 
-bootstrap = Bootstrap(app)
+"""bootstrap = Bootstrap(app)
 
 manager = Manager(app)
-moment = Moment(app)
+moment = Moment(app)"""
 
 
 
