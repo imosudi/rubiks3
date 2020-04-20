@@ -1,0 +1,18 @@
+Options +ExecCGI
+AddHandler cgi-script .cgi .py 
+#AddHandler cgi-script .cgi
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ ~/app/rubiks.cgi/$1 [L]
+
+#vi /etc/apache2/apache2.conf 
+#<Directory /var/www/>
+#        Options Indexes FollowSymLinks
+#        #AllowOverride None
+#        AllowOverride All
+#        Require all granted
+#</Directory>
+#apachectl restart
+#a2enmod rewrite
+#apachectl restart
