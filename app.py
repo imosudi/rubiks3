@@ -6,8 +6,8 @@ from flask_bootstrap import Bootstrap
 
 import views
 import config
-import logics
-import forms
+#import logics
+#import forms
 
 """import numpy as np
 import matplotlib
