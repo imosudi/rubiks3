@@ -1,7 +1,0 @@
-# ignore directories
-__pycache__/
-env/
-
-# ignore files
-.env
-*.pyc

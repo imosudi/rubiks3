@@ -17,6 +17,7 @@ import time
 import config
 import forms
 import logics
+from views import  *
 
 
 import io
@@ -35,7 +36,7 @@ moment = Moment(app)
 
 
 
-from views import  *
+
 
 
 
