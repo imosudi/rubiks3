@@ -5,7 +5,7 @@ from datetime import datetime
 import time
 
 
-import app
+from app import *
 
 
 
