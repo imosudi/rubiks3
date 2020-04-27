@@ -1,6 +1,9 @@
 #config.py
 import os
 import sys
+
+env = os.environ.get('FLASK_ENV', environment)
+
 #sys.path.insert(0, "../venv/lib/python3.6/site-packages")
 #Dockerfile COPY --from=builder /app/build "../venv/lib/python3.6/site-packages"
 #sys.path.insert(0, "../python3.6/site-packages")
