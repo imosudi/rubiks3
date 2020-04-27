@@ -2,7 +2,7 @@ from flask import session
 
 
 #import forms
-"""from forms import rubikForm, rubikFormM
+from forms import rubikForm, rubikFormM
 
 class rubikOperation(object):
 	#n = int(input('Give N for nXnXn Rubik\'s cube: '))
@@ -67,4 +67,3 @@ class rubikOperation(object):
 			hidden = m ** 3
 			return hidden
 		pass
-"""
