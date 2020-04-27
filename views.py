@@ -7,8 +7,13 @@ import time
 import forms
 import logics
 
+import io
+import base64
 
-import app
+#import cube2
+from cube2 import Cube
+
+from app import app
 
 @app.route('/', methods = ['GET', 'POST'])
 def index():
