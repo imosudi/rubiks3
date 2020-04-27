@@ -10,7 +10,8 @@ import time
 
 
 import config
-import forms logics
+import forms
+import logics
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'hard to guess string'
