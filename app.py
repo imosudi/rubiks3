@@ -1,16 +1,16 @@
-from flask import Flask, render_template, flash
+from flask import Flask #, render_template, flash
 from flask_bootstrap import Bootstrap
 from flask_script import Manager
 from flask_moment import Moment
 
-import numpy as np
+"""import numpy as np
 #import matplotlib
 #matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 
 from datetime import datetime
-import time
+import time"""
 
 
 
