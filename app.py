@@ -37,7 +37,7 @@ moment = Moment(app)
 
 
 
-from views import  *
+from app.views import  *
 
 
 
