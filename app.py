@@ -7,7 +7,7 @@ import config
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'hard to guess string'
 
-bootstrap = Bootstrap(app)
+bootstrap = Bootstrap4(app)
 
 manager = Manager(app)
 moment = Moment(app)
