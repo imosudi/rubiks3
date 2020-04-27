@@ -1,5 +1,5 @@
-from flask import Flask
-
+from flask import Flask, render_template, flash
+from flask_bootstrap import Bootstrap
 
 import config
 
