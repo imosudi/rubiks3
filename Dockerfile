@@ -12,7 +12,7 @@ WORKDIR /rubiksapp
 COPY requirements.txt  /rubiksapp
 RUN pip3 install -r requirements.txt
 
-
+#/usr/local/lib/python*/dist-packages
 
 COPY  /app .
 
