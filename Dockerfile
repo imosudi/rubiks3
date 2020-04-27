@@ -5,6 +5,7 @@ MAINTAINER mosudi.pg7331@st.futminna.edu.ng
 
 RUN apt update
 
+#RUN apt install python3.8 python3.8-dev -y
 
 WORKDIR /rubiksapp
 
