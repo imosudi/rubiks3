@@ -13,7 +13,6 @@ def another():
     return render_template('about.html', pageName = pageName,  current_time=datetime.utcnow())
 
 
-
 @app.route('/about', methods = ['GET'])
 def about():
     pageName = "about"
