@@ -8,7 +8,7 @@ import forms
 import logics
 
 
-from app import app
+import app
 
 @app.route('/', methods = ['GET', 'POST'])
 def index():
