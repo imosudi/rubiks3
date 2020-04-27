@@ -17,7 +17,6 @@ import time
 import config
 import forms
 import logics
-from views import  *
 
 
 import io
@@ -34,6 +33,9 @@ bootstrap = Bootstrap(app)
 manager = Manager(app)
 moment = Moment(app)
 
+
+
+from views import  *
 
 @app.route('/', methods = ['GET', 'POST'])
 def index():
