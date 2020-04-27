@@ -9,5 +9,5 @@ from app import app
 
 @app.route('/another', methods = ['GET'])
 def another():
-    pageName = "about"
+    pageName = "another"
     return render_template('about.html', pageName = pageName,  current_time=datetime.utcnow())
