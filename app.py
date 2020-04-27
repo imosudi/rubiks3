@@ -15,8 +15,8 @@ import time"""
 
 
 import config
-import forms
-import logics
+"""import forms
+import logics"""
 
 
 
