@@ -3,21 +3,21 @@ from flask_bootstrap import Bootstrap
 from flask_script import Manager
 from flask_moment import Moment
 
-"""import numpy as np
+import numpy as np
 #import matplotlib
 #matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 
 from datetime import datetime
-import time"""
+import time
 
 
 
 import config
 import forms
 import logics
-from views import  *
+
 
 
 import io
@@ -37,6 +37,7 @@ moment = Moment(app)
 
 
 
+from views import  *
 
 
 
