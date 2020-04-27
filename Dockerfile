@@ -11,6 +11,8 @@ WORKDIR /rubiksapp
 COPY requirements.txt  /rubiksapp
 RUN pip3 install -r requirements.txt
 
+
+
 COPY  /app .
 
 ENV PORT 9082
