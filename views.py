@@ -5,7 +5,10 @@ from datetime import datetime
 import time
 
 
-from app import app
+import app
+
+
+
 
 @app.route('/another', methods = ['GET'])
 def another():
