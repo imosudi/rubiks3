@@ -14,9 +14,9 @@ import time
 
 
 
-from app import config
-from app import forms
-from app import logics
+import config
+import forms
+import logics
 from app.views import  *
 
 
