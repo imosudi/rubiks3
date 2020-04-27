@@ -14,10 +14,10 @@ import time
 
 
 
-import config
-import forms
-import logics
-from views import  *
+from app import config
+from app import forms
+from app import logics
+from app.views import  *
 
 
 import io
