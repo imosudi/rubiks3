@@ -17,7 +17,7 @@ import time
 import config
 import forms
 import logics
-from app.views import  *
+from views import  *
 
 
 import io
