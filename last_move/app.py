@@ -17,6 +17,7 @@ import time
 import config
 import forms
 import logics
+from views import  *
 
 
 import io
@@ -108,19 +109,6 @@ def index():
 
 
     pass
-
-
-@app.route('/about', methods = ['GET'])
-def about():
-    pageName = "about"
-    return render_template('about.html', pageName = pageName,  current_time=datetime.utcnow())
-
-@app.route('/contact', methods = ['GET'] )
-def contact():
-    pageName = "contact"
-    return render_template('contact.html',  pageName = pageName, current_time=datetime.utcnow())
-
-
 
 
 
