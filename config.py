@@ -2,6 +2,8 @@
 import os
 import sys
 
+
+import app
 env = os.environ.get('FLASK_ENV', environment)
 
 #sys.path.insert(0, "../venv/lib/python3.6/site-packages")
