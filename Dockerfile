@@ -15,7 +15,7 @@ COPY  /app .
 
 ENV PORT 9082
 
-CMD ["/usr/bin/python3", "__init__.py"]
+CMD ["/usr/bin/python3", "app.py"]
 
 
 
