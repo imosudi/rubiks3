@@ -17,7 +17,8 @@ import logics
 import io
 import base64
 
-
+#import cube2
+from cube2 import Cube
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'hard to guess string'
