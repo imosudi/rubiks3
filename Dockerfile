@@ -20,12 +20,12 @@ RUN apt update
 
 RUN apt install apache2 -y
 
-RUN cat <<EOF >> >> /etc/apache2/apache2.conf
+RUN cat <<EOF >> /etc/apache2/apache2.conf
  <Directory /var/www/>  	
     Options Indexes FollowSymLinks 
     AllowOverride All    			
     Require all granted 			
-</Directory> 						
+ </Directory> 						
 
 EOF
 
