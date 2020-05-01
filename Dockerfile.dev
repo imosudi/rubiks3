@@ -20,6 +20,13 @@ RUN apt update
 
 RUN apt install apache2 -y
 
+RUN echo " <Directory /var/www/>  	\
+    			Options Indexes FollowSymLinks 	\
+    			AllowOverride All    			\
+    			Require all granted 			\
+			</Directory> 						\
+			" >> /etc/apache2/apache2.conf
+
 COPY /web /var/www/
 
 COPY --from=builder /usr/local/lib/python*/dist-packages  /rubiks3app/site-packages
