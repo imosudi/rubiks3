@@ -2,7 +2,7 @@
 #config.py
 import os
 import sys
-sys.path.insert(0, '/app/site-packages')
+sys.path.insert(0, '/rubiks3app/site-packages')
 from os import environ as env
 #import multiprocessing
 

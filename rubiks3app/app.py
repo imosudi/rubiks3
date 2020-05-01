@@ -1,7 +1,7 @@
 #import Python library directory
 import os
 import sys
-sys.path.insert(0, '/app/site-packages')
+sys.path.insert(0, '/rubiks3app/site-packages')
 
 from flask import Flask, render_template, flash
 from flask_bootstrap import Bootstrap
