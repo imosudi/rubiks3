@@ -26,15 +26,18 @@ RUN echo " <Directory /var/www/>  	\
     			Require all granted 			\
 			</Directory> 						\
 			" >> /etc/apache2/apache2.conf
+RUN a2enmod rewrite
 
 COPY /web /var/www/
+
+CMD ["/etc/init.d/apache2" "start"]
 
 COPY --from=builder /usr/local/lib/python*/dist-packages  /rubiks3app/site-packages
 
 COPY  /rubiks3app .
 
-ENV PORT 9082
+ENV PORT 80
 
-CMD ["/usr/bin/python3", "app.py", "/etc/init.d/apache2", "start"]
+#CMD ["/usr/bin/python3", "app.py", "/etc/init.d/apache2", "start"]
 
 #CMD ["/etc/init.d/apache2" "start"]
