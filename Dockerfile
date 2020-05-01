@@ -20,14 +20,12 @@ RUN apt update
 
 RUN apt install apache2 -y
 
-RUN cat <<EOF >> /etc/apache2/apache2.conf
- <Directory /var/www/>  	
-    Options Indexes FollowSymLinks 
-    AllowOverride All    			
-    Require all granted 			
- </Directory> 						
-
-EOF
+RUN echo "<Directory /var/www/>" >> /etc/apache2/apache2.conf
+RUN echo "	Options Indexes FollowSymLinks" >> /etc/apache2/apache2.conf
+RUN echo "	AllowOverride All" >> /etc/apache2/apache2.conf
+RUN echo "	Require all granted " >> /etc/apache2/apache2.conf
+RUN echo "</Directory> " >> /etc/apache2/apache2.conf	 	
+     
 
 RUN a2enmod rewrite
 
