@@ -16,7 +16,7 @@ FROM imosudi/ubuntu-rootfs-osbuilder:v10.0
 
 COPY --from=builder /usr/local/lib/python*/dist-packages  /app/site-packages
 
-COPY  --from=builder  /app .
+COPY  /app .
 
 ENV PORT 9082
 
