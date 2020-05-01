@@ -16,27 +16,14 @@ RUN pip3 install -r requirements.txt
 
 FROM imosudi/ubuntu-rootfs-osbuilder:v10.0
 
-RUN apt update
+COPY --from=builder /usr/local/lib/python*/dist-packages  /app/site-packages
 
-RUN apt install apache2 -y
-
-RUN echo " <Directory /var/www/>  	\
-    			Options Indexes FollowSymLinks 	\
-    			AllowOverride All    			\
-    			Require all granted 			\
-			</Directory> 						\
-			" >> /etc/apache2/apache2.conf
-
-COPY /web /var/www/
-
-COPY --from=builder /usr/local/lib/python*/dist-packages  /rubiks3app/site-packages
-
-COPY  /rubiks3app .
+COPY  /app .
 
 ENV PORT 9082
 
-CMD ["/usr/bin/python3", "app.py", "/etc/init.d/apache2", "start"]
+CMD ["/usr/bin/python3", "app.py"]
 
-#CMD ["/etc/init.d/apache2" "start"]
+
 
 
