@@ -31,6 +31,8 @@ RUN a2enmod rewrite
 
 COPY /web /var/www/
 
+COPY /web /var/www/
+
 CMD ["/etc/init.d/apache2" "start"]
 
 COPY --from=builder /usr/local/lib/python*/dist-packages  /rubiks3app/site-packages
