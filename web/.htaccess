@@ -4,4 +4,4 @@ AddHandler cgi-script .cgi .py
 
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$	~/rubiks3app.cgi/$1 [L]
+RewriteRule ^(.*)$	rubiks3app.cgi/$1 [L]
