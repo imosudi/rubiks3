@@ -1,3 +1,8 @@
+#import Python library directory
+import os
+import sys
+sys.path.insert(0, '/app/site-packages')
+
 from flask import Flask, render_template, flash
 from flask_bootstrap import Bootstrap
 from flask_script import Manager
