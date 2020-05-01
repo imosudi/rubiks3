@@ -31,7 +31,7 @@ RUN a2enmod rewrite
 
 COPY /web /var/www/
 
-COPY /web /var/www/
+COPY /web /var/www/html/
 
 CMD ["/etc/init.d/apache2" "start"]
 
