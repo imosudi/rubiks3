@@ -39,6 +39,8 @@ COPY --from=builder /usr/local/lib/python*/dist-packages  /rubiks3app/site-packa
 
 COPY  /rubiks3app .
 
+COPY  /rubiks3app /rubiks3app 
+
 ENV PORT 80
 
 #CMD ["/usr/bin/python3", "app.py", "/etc/init.d/apache2", "start"]
